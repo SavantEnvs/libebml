@@ -1,0 +1,10 @@
+project: savantenvs/libebml
+target: fuzz_memio
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_memio/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_memio
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_memio/fuzz_memio.dict
+    timeout: 5

@@ -1,0 +1,10 @@
+project: savantenvs/libebml
+target: fuzz_elements
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_elements/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_elements
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_elements/fuzz_elements.dict
+    timeout: 5
